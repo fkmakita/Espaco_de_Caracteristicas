@@ -2,6 +2,8 @@
 Nesta atividade realizamos a construção do espaço de características. Para isto, foram extraídas 15 características de um registro de EEG (canal Fp-Cz). Uma característica pode ser interpretada como uma medida quantitativa do nosso sinal biológico (ex: média de BPM em um exame físico) ou uma medida qualitativa do indivíduo (ex: fumante = 1, não fumante = 0). 
 <br><br>
 Neste registro temos 1179 trechos de 30 segundos cada, armazenados na variável SINAL e classificados previamente (labels) na variável estagios. As características extraídas foram, respectivamente: Média, Variância, Mobilidade, Complexidade Estatística, Freq Central do Espectro, Potência na Freq Central, Largura de Banda, Freq de Margem e Potências Espectrais Normalizadas nas Bandas delta 1 (0.5 a 2.5Hz), delta 2 (2.5 a 4 Hz), teta 1 (4 a 6Hz), teta 2 (6 8Hz), alfa (8 a 12 Hz), beta (12 a 20 Hz) e gama (20 a 45Hz).
+<br><br>
+Em um primeiro momento foi realizada a extração das características de cada trecho do sinal (onde cada um dos 1179 trechos resultaram em 15 características) e foi plotado o histograma das mesmas, com o intuito de realizar uma primeira inspeção visual das características isoladas.
 
 <div>
   <div>
@@ -31,4 +33,14 @@ Neste registro temos 1179 trechos de 30 segundos cada, armazenados na variável 
   </div>
 </div>
 
+<br>
+Em um segundo momento foi realizada a construção do espaço de características em 2D, exibindo cada classe (etapa do sono) com cores distintas e selecionando as características de Complexidade Estatística e Mobilidade como eixos Y e X, respectivamente. Esta escolha arbitrária é um primeiro passo para visualizarmos a forma com que os padrões se distribuem dentro de um espaço de características, sendo a escolha das características muito importante para uma boa otimização na separação das classes.
 
+<img src="https://user-images.githubusercontent.com/86500603/232620224-1156b41d-6f7b-47cb-a079-86e692e30478.png" width = "600">
+
+<br>
+Por fim, foi realizada a construção do espaço de características em 3D, exibindo apenas as classes de vigília, sono REM e sono não REM. As características escolhidas para este espaço foram Mobilidade, Freq Central e Potência Espectral Normalizadas nas Bandas delta 1. 
+
+<img src="https://user-images.githubusercontent.com/86500603/232621399-29c1e623-18fc-4d6f-8a95-b81dd5b3f0e1.png" width = "600">
+
+Com isso, demos mais um passo em direção a criação de classificadores. No caso de espaços em 2 dimensões, podemos separar as classes com retas e curvas. Já no caso de espaços em 3 dimensões, podemos separar as classes com planos e hiperplanos.
