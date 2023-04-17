@@ -1,5 +1,7 @@
 # Espaço de Características
-Nesta atividade realizamos a construção do espaço de características. Para isto, foram extraídas 15 características de um registro de EEG (canal Fp-Cz). Este registro contém 1179 trechos de 30 segundos cada, armazenados na variável SINAL e classificadas previamente na variável estagios.
+Nesta atividade realizamos a construção do espaço de características. Para isto, foram extraídas 15 características de um registro de EEG (canal Fp-Cz). Uma característica pode ser interpretada como uma medida quantitativa do nosso sinal biológico (ex: média de BPM em um exame físico) ou uma medida qualitativa do indivíduo (ex: fumante = 1, não fumante = 0). 
+<br><br>
+Neste registro temos 1179 trechos de 30 segundos cada, armazenados na variável SINAL e classificados previamente (labels) na variável estagios. As características extraídas foram, respectivamente: Média, Variância, Mobilidade, Complexidade Estatística, Freq Central do Espectro, Potência na Freq Central, Largura de Banda, Freq de Margem e Potências Espectrais Normalizadas nas Bandas delta 1 (0.5 a 2.5Hz), delta 2 (2.5 a 4 Hz), teta 1 (4 a 6Hz), teta 2 (6 8Hz), alfa (8 a 12 Hz), beta (12 a 20 Hz) e gama (20 a 45Hz).
 
 <div>
   <div>
